@@ -1,0 +1,179 @@
+{
+  "mcqs": {
+    "Relational Databases and MySQL Fundamentals": {
+      "Database Basics and SQL": [
+        {
+          "title": "Relational Databases and MySQL Fundamentals - Quiz",
+          "description": "Test your knowledge of relational databases and basic SQL operations.",
+          "questions": [
+            {
+              "question": "What is a relational database?",
+              "options": [
+                "A database that stores data in a hierarchical structure.",
+                "A database that stores data in tables with rows and columns.",
+                "A database that stores data in a single file.",
+                "A database that only stores images."
+              ],
+              "answer": "A database that stores data in tables with rows and columns.",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which of the following is NOT a key concept in relational databases?",
+              "options": [
+                "Tables",
+                "Rows",
+                "Columns",
+                "Linked Lists"
+              ],
+              "answer": "Linked Lists",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What is a primary key?",
+              "options": [
+                "A key that unlocks the database.",
+                "A unique identifier for each row in a table.",
+                "A key used for sorting data.",
+                "A key used for encrypting data."
+              ],
+              "answer": "A unique identifier for each row in a table.",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What is a foreign key?",
+              "options": [
+                "A key from a different database.",
+                "A key that references the primary key of another table.",
+                "A key used for searching data.",
+                "A key used for backing up data."
+              ],
+              "answer": "A key that references the primary key of another table.",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which SQL command is used to create a new table?",
+              "options": [
+                "INSERT",
+                "SELECT",
+                "CREATE",
+                "UPDATE"
+              ],
+              "answer": "CREATE",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which SQL command is used to add new data to a table?",
+              "options": [
+                "SELECT",
+                "UPDATE",
+                "DELETE",
+                "INSERT"
+              ],
+              "answer": "INSERT",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which SQL command is used to retrieve data from a table?",
+              "options": [
+                "CREATE",
+                "INSERT",
+                "SELECT",
+                "DELETE"
+              ],
+              "answer": "SELECT",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which SQL command is used to modify existing data in a table?",
+              "options": [
+                "INSERT",
+                "DELETE",
+                "UPDATE",
+                "CREATE"
+              ],
+              "answer": "UPDATE",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which SQL command is used to remove data from a table?",
+              "options": [
+                "UPDATE",
+                "SELECT",
+                "DELETE",
+                "CREATE"
+              ],
+              "answer": "DELETE",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Why are relational databases useful?",
+              "options": [
+                "They are difficult to manage.",
+                "They ensure data integrity and consistency.",
+                "They are only useful for small datasets.",
+                "They are not scalable."
+              ],
+              "answer": "They ensure data integrity and consistency.",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "In MySQL Workbench, what is the purpose of the SQL editor?",
+              "options": [
+                "To design the user interface.",
+                "To write and execute SQL queries.",
+                "To manage server settings.",
+                "To create database backups."
+              ],
+              "answer": "To write and execute SQL queries.",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What is the purpose of defining data types for columns in a table?",
+              "options": [
+                "To make the table look nicer.",
+                "To ensure data consistency and validity.",
+                "To speed up data retrieval.",
+                "To reduce the size of the database."
+              ],
+              "answer": "To ensure data consistency and validity.",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which of the following data types is suitable for storing whole numbers in MySQL?",
+              "options": [
+                "VARCHAR",
+                "TEXT",
+                "INT",
+                "DATE"
+              ],
+              "answer": "INT",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which of the following data types is suitable for storing text strings in MySQL?",
+              "options": [
+                "INT",
+                "DATE",
+                "BOOLEAN",
+                "VARCHAR"
+              ],
+              "answer": "VARCHAR",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What is the purpose of using `WHERE` clause in a `SELECT` statement?",
+              "options": [
+                "To specify the columns to retrieve.",
+                "To filter the rows based on a condition.",
+                "To sort the results.",
+                "To group the results."
+              ],
+              "answer": "To filter the rows based on a condition.",
+              "difficulty": "Beginner"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

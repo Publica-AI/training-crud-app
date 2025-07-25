@@ -1,0 +1,179 @@
+{
+  "mcqs": {
+    "User Authentication and Authorization in FastAPI": {
+      "Authentication and Authorization": [
+        {
+          "title": "User Authentication and Authorization in FastAPI - Quiz",
+          "description": "Test your knowledge of user authentication and authorization concepts in FastAPI.",
+          "questions": [
+            {
+              "question": "Why is user authentication essential in backend systems?",
+              "options": [
+                "To improve the visual appeal of the application.",
+                "To ensure only authorized users can access specific resources and functionalities.",
+                "To reduce the server load.",
+                "To simplify the codebase."
+              ],
+              "answer": "To ensure only authorized users can access specific resources and functionalities.",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which of the following is a secure method for storing passwords?",
+              "options": [
+                "Storing passwords in plain text.",
+                "Storing passwords using simple encryption.",
+                "Storing passwords using hashing algorithms like bcrypt.",
+                "Storing passwords in a publicly accessible file."
+              ],
+              "answer": "Storing passwords using hashing algorithms like bcrypt.",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What is a JSON Web Token (JWT) used for?",
+              "options": [
+                "To store user passwords.",
+                "To manage user sessions and authenticate requests.",
+                "To define the database schema.",
+                "To style the user interface."
+              ],
+              "answer": "To manage user sessions and authenticate requests.",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "In the context of authentication, what does 'login functionality' typically involve?",
+              "options": [
+                "Creating a new user account.",
+                "Verifying user credentials and generating a session token.",
+                "Deleting a user account.",
+                "Resetting a user's password."
+              ],
+              "answer": "Verifying user credentials and generating a session token.",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "How can you protect API endpoints using token-based authentication?",
+              "options": [
+                "By making the API endpoints publicly accessible.",
+                "By requiring a valid token in the request headers to access the endpoint.",
+                "By encrypting the entire API.",
+                "By hiding the API endpoints from the user."
+              ],
+              "answer": "By requiring a valid token in the request headers to access the endpoint.",
+              "difficulty": "Intermediate"
+            },
+            {
+              "question": "What is OAuth2 primarily used for?",
+              "options": [
+                "Encrypting data in the database.",
+                "Managing access control and authorization for authenticated users.",
+                "Creating user interfaces.",
+                "Optimizing database queries."
+              ],
+              "answer": "Managing access control and authorization for authenticated users.",
+              "difficulty": "Intermediate"
+            },
+            {
+              "question": "How can FastAPI's dependency system be used with OAuth2?",
+              "options": [
+                "To automatically generate API documentation.",
+                "To inject dependencies for authentication and authorization, simplifying access control.",
+                "To manage database connections.",
+                "To handle error logging."
+              ],
+              "answer": "To inject dependencies for authentication and authorization, simplifying access control.",
+              "difficulty": "Intermediate"
+            },
+            {
+              "question": "What is the purpose of retrieving the authenticated user's profile?",
+              "options": [
+                "To display the user's name on the screen.",
+                "To access user-specific data and personalize the application experience.",
+                "To track user activity.",
+                "To send promotional emails."
+              ],
+              "answer": "To access user-specific data and personalize the application experience.",
+              "difficulty": "Intermediate"
+            },
+            {
+              "question": "Why is it important to restrict access to protected routes?",
+              "options": [
+                "To make the application more complex.",
+                "To ensure that only authorized users can access sensitive data and functionalities.",
+                "To improve the application's performance.",
+                "To reduce the amount of code needed."
+              ],
+              "answer": "To ensure that only authorized users can access sensitive data and functionalities.",
+              "difficulty": "Intermediate"
+            },
+            {
+              "question": "Which of the following is a common header used to send a JWT?",
+              "options": [
+                "Content-Type",
+                "Authorization",
+                "User-Agent",
+                "Accept"
+              ],
+              "answer": "Authorization",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What does the term 'scope' refer to in the context of OAuth2?",
+              "options": [
+                "The size of the database.",
+                "The permissions granted to an application to access a user's data.",
+                "The programming language used.",
+                "The number of users in the system."
+              ],
+              "answer": "The permissions granted to an application to access a user's data.",
+              "difficulty": "Intermediate"
+            },
+            {
+              "question": "What is the role of a 'client' in OAuth2?",
+              "options": [
+                "The server that hosts the API.",
+                "An application requesting access to a user's data on a resource server.",
+                "The user accessing the application.",
+                "The database used by the application."
+              ],
+              "answer": "An application requesting access to a user's data on a resource server.",
+              "difficulty": "Intermediate"
+            },
+            {
+              "question": "What is a 'resource server' in OAuth2?",
+              "options": [
+                "The server that authenticates the user.",
+                "The server that hosts the protected resources and verifies the access token.",
+                "The client application.",
+                "The database server."
+              ],
+              "answer": "The server that hosts the protected resources and verifies the access token.",
+              "difficulty": "Intermediate"
+            },
+            {
+              "question": "What is the purpose of a 'refresh token' in OAuth2?",
+              "options": [
+                "To immediately grant access to resources.",
+                "To obtain a new access token without requiring the user to re-authenticate.",
+                "To revoke access to resources.",
+                "To encrypt the access token."
+              ],
+              "answer": "To obtain a new access token without requiring the user to re-authenticate.",
+              "difficulty": "Advanced"
+            },
+            {
+              "question": "Which FastAPI security dependency is commonly used for handling OAuth2?",
+              "options": [
+                "HTTPBasic",
+                "HTTPDigest",
+                "OAuth2PasswordBearer",
+                "APIKeyHeader"
+              ],
+              "answer": "OAuth2PasswordBearer",
+              "difficulty": "Intermediate"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
