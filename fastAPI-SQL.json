@@ -1,0 +1,179 @@
+{
+  "mcqs": {
+    "SQLAlchemy and FastAPI Integration": {
+      "Core Concepts and CRUD Operations": [
+        {
+          "title": "SQLAlchemy and FastAPI Integration - Quiz",
+          "description": "Test your knowledge of SQLAlchemy, FastAPI, and their integration for database operations.",
+          "questions": [
+            {
+              "question": "What is SQLAlchemy primarily used for?",
+              "options": [
+                "Creating user interfaces.",
+                "Handling HTTP requests in Python.",
+                "Providing an ORM for interacting with databases.",
+                "Managing server infrastructure."
+              ],
+              "answer": "Providing an ORM for interacting with databases.",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What does ORM stand for in the context of SQLAlchemy?",
+              "options": [
+                "Object Relational Mapping",
+                "Object Rendering Model",
+                "Operational Resource Management",
+                "Object Request Manager"
+              ],
+              "answer": "Object Relational Mapping",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which of the following is NOT a benefit of using an ORM like SQLAlchemy?",
+              "options": [
+                "Increased code readability.",
+                "Database abstraction.",
+                "Automatic SQL injection prevention.",
+                "Direct SQL query execution."
+              ],
+              "answer": "Direct SQL query execution.",
+              "difficulty": "Intermediate"
+            },
+            {
+              "question": "How does SQLAlchemy connect to a database?",
+              "options": [
+                "Through a connection string.",
+                "By directly embedding the database file.",
+                "Via a web browser interface.",
+                "Using a proprietary API."
+              ],
+              "answer": "Through a connection string.",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "In SQLAlchemy, what is a `Model`?",
+              "options": [
+                "A representation of a database table as a Python class.",
+                "A function for handling HTTP requests.",
+                "A configuration file for the database.",
+                "A tool for visualizing database schemas."
+              ],
+              "answer": "A representation of a database table as a Python class.",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What is the purpose of `Base` in SQLAlchemy?",
+              "options": [
+                "It's the base class for all database models.",
+                "It's a function for creating database connections.",
+                "It's a decorator for defining API endpoints.",
+                "It's a tool for managing database migrations."
+              ],
+              "answer": "It's the base class for all database models.",
+              "difficulty": "Intermediate"
+            },
+            {
+              "question": "Which of the following is a valid CRUD operation?",
+              "options": [
+                "Compile",
+                "Refactor",
+                "Update",
+                "Deploy"
+              ],
+              "answer": "Update",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "In FastAPI, how do you typically access the database session?",
+              "options": [
+                "Through global variables.",
+                "By directly importing the database connection.",
+                "Using dependency injection.",
+                "By creating a new session for each request."
+              ],
+              "answer": "Using dependency injection.",
+              "difficulty": "Intermediate"
+            },
+            {
+              "question": "Which HTTP method is typically used for creating a new resource in a RESTful API?",
+              "options": [
+                "GET",
+                "PUT",
+                "POST",
+                "DELETE"
+              ],
+              "answer": "POST",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which HTTP method is typically used for retrieving a resource in a RESTful API?",
+              "options": [
+                "POST",
+                "PUT",
+                "GET",
+                "DELETE"
+              ],
+              "answer": "GET",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which HTTP method is typically used for updating an existing resource in a RESTful API?",
+              "options": [
+                "POST",
+                "PATCH",
+                "GET",
+                "DELETE"
+              ],
+              "answer": "PATCH",
+              "difficulty": "Intermediate"
+            },
+             {
+              "question": "Which HTTP method is typically used for deleting a resource in a RESTful API?",
+              "options": [
+                "POST",
+                "PUT",
+                "GET",
+                "DELETE"
+              ],
+              "answer": "DELETE",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What is the purpose of `db.add(instance)` in SQLAlchemy?",
+              "options": [
+                "To delete an instance from the database.",
+                "To add a new instance to the database session.",
+                "To update an existing instance in the database.",
+                "To query the database for an instance."
+              ],
+              "answer": "To add a new instance to the database session.",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What does `db.commit()` do in SQLAlchemy?",
+              "options": [
+                "It rolls back the current transaction.",
+                "It saves the changes made in the session to the database.",
+                "It closes the database connection.",
+                "It starts a new transaction."
+              ],
+              "answer": "It saves the changes made in the session to the database.",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What is the purpose of using `async def` when defining FastAPI routes that interact with a database?",
+              "options": [
+                "To make the route run faster.",
+                "To enable asynchronous database operations, preventing blocking.",
+                "To automatically generate API documentation.",
+                "To simplify error handling."
+              ],
+              "answer": "To enable asynchronous database operations, preventing blocking.",
+              "difficulty": "Advanced"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

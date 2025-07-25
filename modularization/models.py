@@ -17,3 +17,4 @@ class User(Base):
     name = Column(String(255))
     email = Column(String(255), unique=True, index=True)
     hashed_password = Column(String(255))
+

@@ -1,7 +1,6 @@
 # ============================================
 # auth.py — Handles password hashing and JWT logic
 # ============================================
-
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
 from passlib.context import CryptContext
@@ -68,3 +67,5 @@ fake_user = {
     "username": "admin",
     "hashed_password": get_password_hash("admin123")  # Plain password is 'admin123'
 }
+
+
