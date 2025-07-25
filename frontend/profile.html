@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2>User Profile</h2>
+      <div id="profile"></div>
+
+      <h3>Update Profile</h3>
+      <form id="updateForm">
+        <input type="text" name="name" placeholder="New name" />
+        <input type="email" name="email" placeholder="New email" />
+        <button type="submit">Update</button>
+      </form>
+
+      <h3>Upload Profile Picture</h3>
+      <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="file" required />
+        <button type="submit">Upload</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
