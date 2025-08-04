@@ -1,0 +1,182 @@
+
+{
+  
+  "mcqs": {
+    "HTTP and APIs": {
+      "Understanding HTTP and APIs": [
+        {
+          "title": "HTTP and API Basics - Quiz",
+          "description": "Test your understanding of HTTP, HTTP methods, APIs, Postman usage, and status codes.",
+          "questions": [
+            {
+              "question": "What does HTTP stand for?",
+              "options": [
+                "HyperText Transfer Protocol",
+                "HyperText Testing Program",
+                "High Tech Text Processor",
+                "Hosting Terminal Transfer Process"
+              ],
+              "answer": "HyperText Transfer Protocol",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which HTTP method is typically used to retrieve data from a server?",
+              "options": [
+                "POST",
+                "DELETE",
+                "GET",
+                "PUT"
+              ],
+              "answer": "GET",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What is an API?",
+              "options": [
+                "A type of database",
+                "A set of tools to build web pages",
+                "A way for applications to communicate with each other",
+                "A programming language"
+              ],
+              "answer": "A way for applications to communicate with each other",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which HTTP method is used to send data to the server to create a resource?",
+              "options": [
+                "GET",
+                "DELETE",
+                "PATCH",
+                "POST"
+              ],
+              "answer": "POST",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What does the status code 200 mean?",
+              "options": [
+                "Resource not found",
+                "Request was successful",
+                "Server error",
+                "Resource created"
+              ],
+              "answer": "Request was successful",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which of the following is a benefit of using APIs?",
+              "options": [
+                "Slower performance",
+                "Manual data entry",
+                "Easier integration between systems",
+                "Requires more storage"
+              ],
+              "answer": "Easier integration between systems",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What is Postman primarily used for?",
+              "options": [
+                "Designing websites",
+                "Writing HTML code",
+                "Testing APIs",
+                "Editing images"
+              ],
+              "answer": "Testing APIs",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What does the 404 HTTP status code indicate?",
+              "options": [
+                "Request successful",
+                "Unauthorized access",
+                "Resource not found",
+                "Resource updated"
+              ],
+              "answer": "Resource not found",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which method would you use to remove a record from a server?",
+              "options": [
+                "POST",
+                "DELETE",
+                "GET",
+                "PUT"
+              ],
+              "answer": "DELETE",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Why might a developer use Postman?",
+              "options": [
+                "To install Python",
+                "To store files",
+                "To test HTTP requests and responses",
+                "To write CSS"
+              ],
+              "answer": "To test HTTP requests and responses",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which HTTP method is used to update a resource completely?",
+              "options": [
+                "PATCH",
+                "POST",
+                "PUT",
+                "GET"
+              ],
+              "answer": "PUT",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What does a 201 status code mean?",
+              "options": [
+                "Resource deleted",
+                "No content",
+                "Resource created successfully",
+                "Request timeout"
+              ],
+              "answer": "Resource created successfully",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which of the following is not a feature of Postman?",
+              "options": [
+                "Request building",
+                "Response inspection",
+                "Collection management",
+                "Code compilation"
+              ],
+              "answer": "Code compilation",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What does the PATCH method do?",
+              "options": [
+                "Completely replaces a resource",
+                "Partially updates a resource",
+                "Deletes a resource",
+                "Retrieves a resource"
+              ],
+              "answer": "Partially updates a resource",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "How can you install Postman in VSCode?",
+              "options": [
+                "By writing Python code",
+                "Using the Postman API",
+                "By adding the Postman extension from the VSCode marketplace",
+                "Through HTML"
+              ],
+              "answer": "By adding the Postman extension from the VSCode marketplace",
+              "difficulty": "Beginner"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+
