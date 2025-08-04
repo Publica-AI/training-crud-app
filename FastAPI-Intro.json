@@ -1,0 +1,179 @@
+{
+  "mcqs": {
+    "FastAPI and Pydantic": {
+      "Understanding FastAPI and Pydantic": [
+        {
+          "title": "FastAPI and Pydantic Basics - Quiz",
+          "description": "Test your understanding of FastAPI, path operations, data validation with Pydantic, and basic API implementation.",
+          "questions": [
+            {
+              "question": "What is FastAPI used for?",
+              "options": [
+                "Creating machine learning models",
+                "Building APIs quickly with Python",
+                "Designing UI interfaces",
+                "Testing SQL queries"
+              ],
+              "answer": "Building APIs quickly with Python",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which class from Pydantic is used to define a data model?",
+              "options": [
+                "Schema",
+                "ModelForm",
+                "BaseModel",
+                "RequestClass"
+              ],
+              "answer": "BaseModel",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What does FastAPI automatically generate for your API?",
+              "options": [
+                "Unit tests",
+                "SQL queries",
+                "Interactive API documentation",
+                "CSS styling"
+              ],
+              "answer": "Interactive API documentation",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which FastAPI method decorator is used to handle POST requests?",
+              "options": [
+                "@app.get()",
+                "@app.put()",
+                "@app.post()",
+                "@app.delete()"
+              ],
+              "answer": "@app.post()",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What will FastAPI do if the data in a request doesn’t match the Pydantic model?",
+              "options": [
+                "Ignore the data",
+                "Automatically correct it",
+                "Return a validation error",
+                "Redirect to another route"
+              ],
+              "answer": "Return a validation error",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which of the following is a feature of Pydantic?",
+              "options": [
+                "Image rendering",
+                "Data validation",
+                "Database migration",
+                "Network monitoring"
+              ],
+              "answer": "Data validation",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "How do you specify a maximum length for a field in Pydantic?",
+              "options": [
+                "max_len=10",
+                "length=10",
+                "max_length=10",
+                "size=10"
+              ],
+              "answer": "max_length=10",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which HTTP status code does FastAPI use by default for successful GET requests?",
+              "options": [
+                "201",
+                "400",
+                "404",
+                "200"
+              ],
+              "answer": "200",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What is the purpose of the `Field` function in Pydantic?",
+              "options": [
+                "To define table structure",
+                "To set metadata and constraints on fields",
+                "To connect to databases",
+                "To add styling"
+              ],
+              "answer": "To set metadata and constraints on fields",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What happens if you omit a required field in your POST request body?",
+              "options": [
+                "The server will crash",
+                "It will be replaced with None",
+                "FastAPI will raise a validation error",
+                "The request will succeed silently"
+              ],
+              "answer": "FastAPI will raise a validation error",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which method in FastAPI is used to delete a resource?",
+              "options": [
+                "@app.get()",
+                "@app.post()",
+                "@app.delete()",
+                "@app.put()"
+              ],
+              "answer": "@app.delete()",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which FastAPI tool helps you test your endpoints in the browser?",
+              "options": [
+                "Postman",
+                "Swagger UI",
+                "SQLite",
+                "Tortoise ORM"
+              ],
+              "answer": "Swagger UI",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "What does `@app.put()` represent in FastAPI?",
+              "options": [
+                "Create a new user",
+                "Update an existing resource completely",
+                "Partially update a record",
+                "List all records"
+              ],
+              "answer": "Update an existing resource completely",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "How do you declare that a field is required in Pydantic?",
+              "options": [
+                "Set default to None",
+                "Use ... in Field",
+                "Use @required decorator",
+                "Use Mandatory()"
+              ],
+              "answer": "Use ... in Field",
+              "difficulty": "Beginner"
+            },
+            {
+              "question": "Which library do you use to run FastAPI applications?",
+              "options": [
+                "Gunicorn",
+                "Requests",
+                "Uvicorn",
+                "Celery"
+              ],
+              "answer": "Uvicorn",
+              "difficulty": "Beginner"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,568 @@
+{
+  "practices": {
+    "01_introduction_to_fastapi": {
+      "title": "Create a Basic FastAPI App",
+      "description": "Write a simple FastAPI application with a single route that returns a welcome message.",
+      "type": "write",
+      "difficulty": "Beginner",
+      "code": "# Step 1: Import FastAPI\n# Step 2: Create an instance of FastAPI\n# Step 3: Add a GET route at root '/'",
+      "instructions": [
+        "Use FastAPI to return 'Welcome to FastAPI!' when someone visits the homepage.",
+        "Use `@app.get(\"/\")` to define your route."
+      ],
+      "expectedOutput": "Returns: {\"message\": \"Welcome to FastAPI!\"}"
+    },
+    "02_user_registration_model": {
+      "title": "Define a User Registration Model",
+      "description": "Use Pydantic to define a model for user registration with fields for username and password.",
+      "type": "write",
+      "difficulty": "Beginner",
+      "code": "# Step 1: Import BaseModel from Pydantic\n# Step 2: Create a class with username and password fields",
+      "instructions": [
+        "Create a model with fields: username (min length 5) and password (min length 5).",
+        "Use validation with Field(..., min_length=5)."
+      ],
+      "expectedOutput": "Model with proper field validations."
+    },
+    "03_post_user_registration": {
+      "title": "Use POST Method to Register User",
+      "description": "Create a POST endpoint that receives a user object and returns a confirmation.",
+      "type": "write",
+      "difficulty": "Beginner",
+      "code": "# Step 1: Define the route with @app.post\n# Step 2: Accept the user model in the body",
+      "instructions": [
+        "Use the Pydantic user model in the POST method.",
+        "Return a message confirming successful registration."
+      ],
+      "expectedOutput": "Returns: {\"message\": \"User registered successfully\"}"
+    },
+    "04_return_user_object": {
+      "title": "Return User Object After Registration",
+      "description": "Update registration endpoint to return the received user details (excluding password).",
+      "type": "write",
+      "difficulty": "Beginner",
+      "code": "# Step 1: Define a response model\n# Step 2: Use response_model in the route decorator",
+      "instructions": [
+        "Step 1: Create two Pydantic models: one for input, one for output.",
+        "Step 2: Use `response_model` to filter the output.",
+        "Step 3: Return only public user info."
+      ],
+      "expectedOutput": "Returns JSON with username and message, omits password."
+    },
+    "05_validate_username_length": {
+      "title": "Validate Username Length",
+      "description": "Ensure that the username provided by the user is at least 5 characters long.",
+      "type": "write",
+      "difficulty": "Beginner",
+      "code": "# Step 1: Use Pydantic Field\n# Step 2: Apply min_length constraint",
+      "instructions": [
+        "Use Field(..., min_length=5) inside the Pydantic model.",
+        "Try submitting short usernames to test the validation."
+      ],
+      "expectedOutput": "Returns validation error if username is less than 5 characters."
+    },
+    "06_validate_password_length": {
+      "title": "Restrict Password Length in Model",
+      "description": "Ensure that the password is not less than 5 characters using validation.",
+      "type": "write",
+      "difficulty": "Beginner",
+      "code": "# Step 1: Use Field with min_length\n# Step 2: Add to password field",
+      "instructions": [
+        "Use: `password: str = Field(..., min_length=5)` in your Pydantic model."
+      ],
+      "expectedOutput": "Returns validation error for short passwords."
+    },
+    "07_add_email_validation": {
+      "title": "Add Email Field with Validation",
+      "description": "Extend your registration model to include a valid email field.",
+      "type": "write",
+      "difficulty": "Beginner",
+      "code": "# Step 1: Use EmailStr from pydantic\n# Step 2: Add email field to the model",
+      "instructions": [
+        "Use `from pydantic import EmailStr`.",
+        "Replace `email: str` with `email: EmailStr`."
+      ],
+      "expectedOutput": "Returns validation error if email format is invalid."
+    },
+    "08_path_parameter_route": {
+      "title": "Create a GET Route with Path Parameter",
+      "description": "Build a route that returns a message using a username provided in the URL.",
+      "type": "write",
+      "difficulty": "Beginner",
+      "code": "# Step 1: Define a route using @app.get(\"/user/{username}\")\n# Step 2: Return a greeting with the username",
+      "instructions": [
+        "Use FastAPI path parameter.",
+        "Return a greeting like 'Hello, {username}!'"
+      ],
+      "expectedOutput": "Returns: {\"message\": \"Hello, Moji!\"}"
+    },
+    "09_custom_response_message": {
+      "title": "Return Custom Response Message",
+      "description": "Modify the registration route to return a personalized message using the username.",
+      "type": "write",
+      "difficulty": "Beginner",
+      "code": "# Step 1: Extract username from the model\n# Step 2: Use it in the response message",
+      "instructions": [
+        "In your POST function, access user.username.",
+        "Return: {\"message\": \"Welcome, Moji!\"}"
+      ],
+      "expectedOutput": "Returns: {\"message\": \"Welcome, [username]!\"}"
+    },
+    "10_user_login_endpoint": {
+      "title": "Create User Login Endpoint",
+      "description": "Build a POST route that accepts username and password for login.",
+      "type": "write",
+      "difficulty": "Beginner",
+      "code": "# Step 1: Define LoginRequest model\n# Step 2: Return success or failure message",
+      "instructions": [
+        "Step 1: Accept login credentials as request body.",
+        "Step 2: Verify if password equals 'admin123' (as placeholder).",
+        "Step 3: Return login success or failure."
+      ],
+      "expectedOutput": "Displays login status message."
+    },
+    "11_list_response_model": {
+      "title": "Use List in Response Model",
+      "description": "Create a GET route that returns a list of fake users.",
+      "type": "write",
+      "difficulty": "Beginner",
+      "code": "# Step 1: Define UserOut model\n# Step 2: Use List[UserOut] in response_model",
+      "instructions": [
+        "Step 1: Create a model for single user.",
+        "Step 2: Return multiple users using a list.",
+        "Step 3: Test it with Swagger."
+      ],
+      "expectedOutput": "Displays list of user dictionaries."
+    },
+    "12_health_check_route": {
+      "title": "Create Health Check Route",
+      "description": "Build a simple GET route that returns a status OK message.",
+      "type": "write",
+      "difficulty": "Beginner",
+      "code": "# Step 1: Create GET /health\n# Step 2: Return JSON with status: ok",
+      "instructions": [
+        "Step 1: Use FastAPI GET decorator.",
+        "Step 2: Return `{'status': 'ok'}`.",
+        "Step 3: Access the route in browser."
+      ],
+      "expectedOutput": "Returns {\"status\": \"ok\"}."
+    },
+    "13_enum_in_request": {
+      "title": "Use Enum in Request Model",
+      "description": "Add a gender field that only accepts 'male', 'female', or 'other'.",
+      "type": "write",
+      "difficulty": "Beginner",
+      "code": "# Step 1: Import Enum from enum module\n# Step 2: Use it in your model",
+      "instructions": [
+        "Step 1: Create Gender Enum class.",
+        "Step 2: Use it as a type in your Pydantic model.",
+        "Step 3: Test with allowed and disallowed values."
+      ],
+      "expectedOutput": "Rejects invalid gender values."
+    },
+    "14_regex_validation": {
+      "title": "Validate Username with Regex",
+      "description": "Ensure that username contains only alphabets.",
+      "type": "write",
+      "difficulty": "Beginner",
+      "code": "# Step 1: Use regex in Field()\n# Step 2: Test it with invalid input",
+      "instructions": [
+        "Step 1: Import Field and use regex like `^[a-zA-Z]+$`.",
+        "Step 2: Add it to username field.",
+        "Step 3: Test with digits and special characters."
+      ],
+      "expectedOutput": "Validation error if username has non-alphabet characters."
+    },
+    "15_test_with_swagger": {
+      "title": "Test FastAPI Endpoint Using Swagger UI",
+      "description": "Run the FastAPI app and test the POST and GET methods using Swagger UI.",
+      "type": "test",
+      "difficulty": "Beginner",
+      "code": "# Step 1: Run the app with `uvicorn filename:app --reload`\n# Step 2: Open http://127.0.0.1:8000/docs",
+      "instructions": [
+        "Launch the app using uvicorn.",
+        "Use the Swagger interface to register a user."
+      ],
+      "expectedOutput": "Swagger UI shows the routes and allows interaction."
+    },
+    "16_update_user_put": {
+      "title": "Update User Details with PUT Method",
+      "description": "Create a PUT endpoint to update an existing user's name and phone number using Pydantic models.",
+      "type": "write",
+      "difficulty": "Intermediate",
+      "code": "# Step 1: Define an update model\n# Step 2: Use PUT method with path parameter for user ID",
+      "instructions": [
+        "Step 1: Accept user ID in the path.",
+        "Step 2: Accept new data in the request body.",
+        "Step 3: Return updated user object."
+      ],
+      "expectedOutput": "Returns JSON showing updated user information."
+    },
+    "17_query_parameters": {
+      "title": "Use Query Parameters in Endpoint",
+      "description": "Create a GET endpoint that accepts optional query parameters to filter users.",
+      "type": "write",
+      "difficulty": "Intermediate",
+      "code": "# Use FastAPI's Query class to make parameters optional.",
+      "instructions": [
+        "Step 1: Create a GET route with optional query parameters.",
+        "Step 2: Filter a mock user list based on parameters.",
+        "Step 3: Return matching results."
+      ],
+      "expectedOutput": "Returns filtered list of users."
+    },
+    "18_handle_404_errors": {
+      "title": "Handle Missing Users Gracefully",
+      "description": "Raise HTTP 404 if a user is not found during retrieval.",
+      "type": "write",
+      "difficulty": "Intermediate",
+      "code": "# Use HTTPException with status_code 404.",
+      "instructions": [
+        "Step 1: Check if user ID exists.",
+        "Step 2: Raise an exception if not.",
+        "Step 3: Return user if found."
+      ],
+      "expectedOutput": "Returns user or 404 error."
+    },
+    "19_nested_pydantic_models": {
+      "title": "Build Nested Pydantic Models",
+      "description": "Create a Pydantic model that nests another model for structured data.",
+      "type": "write",
+      "difficulty": "Intermediate",
+      "code": "# Create Address model and nest inside User model.",
+      "instructions": [
+        "Step 1: Define nested models.",
+        "Step 2: Use them in POST request.",
+        "Step 3: Return full object."
+      ],
+      "expectedOutput": "Returns nested model data in response."
+    },
+    "20_validation_constraints": {
+      "title": "Add Validation Constraints",
+      "description": "Use Pydantic Field to enforce constraints like min_length and regex.",
+      "type": "write",
+      "difficulty": "Intermediate",
+      "code": "# Add constraints to ensure valid input.",
+      "instructions": [
+        "Step 1: Use Field() to define validations.",
+        "Step 2: Raise error on invalid input.",
+        "Step 3: Test with valid and invalid cases."
+      ],
+      "expectedOutput": "Returns error on invalid inputs."
+    },
+    "21_dependency_injection": {
+      "title": "Use Dependency Injection",
+      "description": "Use FastAPI's Depends to inject common logic such as authentication.",
+      "type": "write",
+      "difficulty": "Intermediate",
+      "code": "# Define a reusable dependency with Depends.",
+      "instructions": [
+        "Step 1: Create a simple auth dependency.",
+        "Step 2: Inject it into a route.",
+        "Step 3: Return protected content."
+      ],
+      "expectedOutput": "Returns data only when dependency passes."
+    },
+    "22_enum_field_choices": {
+      "title": "Create Enum Choices for Field",
+      "description": "Restrict input to specific values using Python Enum in Pydantic.",
+      "type": "write",
+      "difficulty": "Intermediate",
+      "code": "# Define Enum and use in Pydantic model.",
+      "instructions": [
+        "Step 1: Define an Enum class.",
+        "Step 2: Use as a field in model.",
+        "Step 3: Test with valid/invalid values."
+      ],
+      "expectedOutput": "Rejects non-enum values."
+    },
+    "23_custom_response_message": {
+      "title": "Custom Response Message",
+      "description": "Return a custom success message when registration is successful.",
+      "type": "write",
+      "difficulty": "Intermediate",
+      "code": "# Return dict with message on success.",
+      "instructions": [
+        "Step 1: Create a POST route.",
+        "Step 2: Return a confirmation JSON object.",
+        "Step 3: Exclude sensitive data."
+      ],
+      "expectedOutput": "Returns JSON like {'message': 'Registration successful'}"
+    },
+    "24_delete_user_status": {
+      "title": "Delete User with Status Code",
+      "description": "Create a DELETE route and return custom status code (204 No Content).",
+      "type": "write",
+      "difficulty": "Intermediate",
+      "code": "# Use status_code=204 and return no body.",
+      "instructions": [
+        "Step 1: Accept user ID in path.",
+        "Step 2: Remove user from list.",
+        "Step 3: Return response with no content."
+      ],
+      "expectedOutput": "Returns 204 status with no content."
+    },
+    "25_api_documentation": {
+      "title": "Add Tags and Summary to Routes",
+      "description": "Improve Swagger documentation using tags and summaries.",
+      "type": "write",
+      "difficulty": "Intermediate",
+      "code": "# Add summary and tags to route decorators.",
+      "instructions": [
+        "Step 1: Use `tags` and `summary` in route.",
+        "Step 2: Group related endpoints.",
+        "Step 3: View in /docs."
+      ],
+      "expectedOutput": "Swagger UI shows organized API documentation."
+    },
+    "26_simulate_database": {
+      "title": "Simulate Database with Dictionary",
+      "description": "Create in-memory store using dictionary to persist users.",
+      "type": "write",
+      "difficulty": "Intermediate",
+      "code": "# Store users in a Python dict instead of list.",
+      "instructions": [
+        "Step 1: Use user ID as key.",
+        "Step 2: Implement CRUD operations.",
+        "Step 3: Return responses based on dict values."
+      ],
+      "expectedOutput": "Performs full CRUD with in-memory dict."
+    },
+    "27_optional_fields": {
+      "title": "Use Optional Fields in Model",
+      "description": "Use Optional fields in Pydantic to allow partial updates.",
+      "type": "write",
+      "difficulty": "Intermediate",
+      "code": "# Use Optional[str] with default None.",
+      "instructions": [
+        "Step 1: Create an update model.",
+        "Step 2: Skip fields that are not provided.",
+        "Step 3: Merge with existing values."
+      ],
+      "expectedOutput": "Only updates provided fields."
+    },
+    "28_list_model_input": {
+      "title": "Use List of Models in Input",
+      "description": "Accept multiple user objects as a list in POST request.",
+      "type": "write",
+      "difficulty": "Intermediate",
+      "code": "# Accept List[User] as body input.",
+      "instructions": [
+        "Step 1: Use typing.List with Pydantic model.",
+        "Step 2: Loop through items in code.",
+        "Step 3: Return processed list."
+      ],
+      "expectedOutput": "Handles batch input successfully."
+    },
+    "29_api_router": {
+      "title": "Group Endpoints Using APIRouter",
+      "description": "Split routes using FastAPI's APIRouter for modularity.",
+      "type": "write",
+      "difficulty": "Intermediate",
+      "code": "# Use APIRouter and include_router.",
+      "instructions": [
+        "Step 1: Create router file.",
+        "Step 2: Define routes in it.",
+        "Step 3: Mount in main app."
+      ],
+      "expectedOutput": "Organized routes using routers."
+    },
+    "30_form_input": {
+      "title": "Use Form Input with FastAPI",
+      "description": "Create a login endpoint that accepts form data using Form().",
+      "type": "write",
+      "difficulty": "Intermediate",
+      "code": "# Use Form() instead of Body().",
+      "instructions": [
+        "Step 1: Use from fastapi import Form.",
+        "Step 2: Accept username and password.",
+        "Step 3: Return response JSON."
+      ],
+      "expectedOutput": "Returns success message with username."
+    },
+    "31_custom_exception_handler": {
+      "title": "Implement Custom Exception Handler",
+      "description": "Create a custom exception and handle it with a FastAPI exception handler.",
+      "type": "code",
+      "difficulty": "Advanced",
+      "code": "# Step 1: Define your custom exception class\n# Step 2: Use @app.exception_handler to handle it",
+      "instructions": [
+        "Create a custom exception with a meaningful message.",
+        "Raise the exception in a route under certain conditions.",
+        "Register a handler using `@app.exception_handler`."
+      ],
+      "expectedOutput": "Returns custom JSON response when the exception is raised."
+    },
+    "32_class_based_dependency": {
+      "title": "Use Class as Dependency with `__call__`",
+      "description": "Create a class-based dependency using the `__call__` method.",
+      "type": "code",
+      "difficulty": "Advanced",
+      "code": "# Step 1: Define a class with `__call__`\n# Step 2: Use `Depends()` to inject it into a route",
+      "instructions": [
+        "Create a class with init parameters and a `__call__` method.",
+        "Use `Depends` in the route to call the dependency."
+      ],
+      "expectedOutput": "Route receives processed output from class."
+    },
+    "33_advanced_response_model": {
+      "title": "Return Nested Response Model with List",
+      "description": "Create complex Pydantic models with nesting and lists.",
+      "type": "write",
+      "difficulty": "Advanced",
+      "code": "# Use nested models and response_model",
+      "instructions": [
+        "Define nested models using BaseModel.",
+        "Create a route returning a list of those nested models.",
+        "Apply `response_model` to the route."
+      ],
+      "expectedOutput": "Returns a JSON list of nested objects."
+    },
+    "34_custom_validator": {
+      "title": "Use `@validator` for Field Validation in Pydantic",
+      "description": "Add custom validation logic using the `@validator` decorator.",
+      "type": "code",
+      "difficulty": "Advanced",
+      "code": "# Step 1: Add @validator for custom rules",
+      "instructions": [
+        "Use `@validator` to enforce rules like string formatting or constraints.",
+        "Raise `ValueError` when validation fails."
+      ],
+      "expectedOutput": "Model raises error if data fails custom validation."
+    },
+    "35_upload_multiple_files": {
+      "title": "Upload Multiple Files",
+      "description": "Create an endpoint that supports multiple file uploads.",
+      "type": "write",
+      "difficulty": "Advanced",
+      "code": "# Use List[UploadFile] in route parameter",
+      "instructions": [
+        "Create a POST route that accepts a list of files.",
+        "Loop through the uploaded files and return filenames."
+      ],
+      "expectedOutput": "Returns names of uploaded files as JSON."
+    },
+    "36_background_tasks_dependency": {
+      "title": "Use BackgroundTasks with Dependencies",
+      "description": "Combine BackgroundTasks with a dependency in the same route.",
+      "type": "code",
+      "difficulty": "Advanced",
+      "code": "# Accept a dependency and BackgroundTasks",
+      "instructions": [
+        "Define a dependency that returns data.",
+        "Schedule a background task that uses this data.",
+        "Return a response immediately."
+      ],
+      "expectedOutput": "Response is returned while background task runs asynchronously."
+    },
+    "37_custom_openapi_schema": {
+      "title": "Customize OpenAPI Schema",
+      "description": "Modify the default OpenAPI documentation with custom metadata or paths.",
+      "type": "code",
+      "difficulty": "Advanced",
+      "code": "# Override `get_openapi()` in your app",
+      "instructions": [
+        "Define a function that returns a modified schema.",
+        "Set `app.openapi = custom_openapi`."
+      ],
+      "expectedOutput": "Swagger UI reflects custom schema changes."
+    },
+    "38_bearer_token_auth": {
+      "title": "Read Bearer Token from Header",
+      "description": "Extract a bearer token from Authorization header using dependency.",
+      "type": "code",
+      "difficulty": "Advanced",
+      "code": "# Use Header() in dependency",
+      "instructions": [
+        "Define a dependency with `Authorization: str = Header(...)`.",
+        "Parse and validate the Bearer token inside the dependency."
+      ],
+      "expectedOutput": "Token is extracted and validated before proceeding."
+    },
+    "39_middleware_logger": {
+      "title": "Log Requests and Responses using Middleware",
+      "description": "Create a custom middleware that logs request and response information.",
+      "type": "code",
+      "difficulty": "Advanced",
+      "code": "# Use @app.middleware('http')",
+      "instructions": [
+        "Write middleware to log the incoming path and status codes.",
+        "Return the response after logging."
+      ],
+      "expectedOutput": "Logs paths and response details to console."
+    },
+    "40_serve_static_files": {
+      "title": "Serve Static Files",
+      "description": "Use `StaticFiles` to mount and serve static assets.",
+      "type": "code",
+      "difficulty": "Advanced",
+      "code": "# Use app.mount with StaticFiles",
+      "instructions": [
+        "Create a `static/` folder and place sample files.",
+        "Use `app.mount` to serve the folder under `/static`."
+      ],
+      "expectedOutput": "Files under /static/ are served directly."
+    },
+    "41_nested_routers": {
+      "title": "Organize with Nested Routers",
+      "description": "Create sub-APIRouters and include them in main app.",
+      "type": "code",
+      "difficulty": "Advanced",
+      "code": "# Use APIRouter and include_router",
+      "instructions": [
+        "Create multiple router files.",
+        "Use `include_router` with prefixes and tags."
+      ],
+      "expectedOutput": "Routes are grouped and namespaced cleanly."
+    },
+    "42_async_db_session": {
+      "title": "Use Async Database Session",
+      "description": "Integrate async session with FastAPI route.",
+      "type": "code",
+      "difficulty": "Advanced",
+      "code": "# Use SQLAlchemy AsyncSession",
+      "instructions": [
+        "Use `async with session.begin()` for DB operations.",
+        "Ensure all route functions are `async def`."
+      ],
+      "expectedOutput": "Non-blocking DB calls work correctly."
+    },
+    "43_global_exception_handler": {
+      "title": "Add Global Exception Handler for 500 Errors",
+      "description": "Catch and handle uncaught server exceptions globally.",
+      "type": "code",
+      "difficulty": "Advanced",
+      "code": "# Use exception_handler for generic Exception",
+      "instructions": [
+        "Register an exception handler for `Exception`.",
+        "Return friendly JSON when error occurs."
+      ],
+      "expectedOutput": "Unhandled errors are caught and returned gracefully."
+    },
+    "44_dynamic_route_validation": {
+      "title": "Create Dynamic Route with Enum and Path Validations",
+      "description": "Create routes using Enum values and validate path parameters.",
+      "type": "code",
+      "difficulty": "Advanced",
+      "code": "# Use Enum and Path from FastAPI",
+      "instructions": [
+        "Define an Enum class for allowed values.",
+        "Use Path() to add constraints like min/max values."
+      ],
+      "expectedOutput": "Route responds only to valid enum and path inputs."
+    },
+    "45_advanced_swagger_testing": {
+      "title": "Advanced Testing with Swagger UI",
+      "description": "Test complex FastAPI endpoints including file uploads and authentication using Swagger UI.",
+      "type": "test",
+      "difficulty": "Advanced",
+      "code": "# Step 1: Run the app with `uvicorn filename:app --reload`\n# Step 2: Open http://127.0.0.1:8000/docs\n# Step 3: Test advanced features like file uploads and auth",
+      "instructions": [
+        "Launch the app using uvicorn with all advanced features enabled.",
+        "Test file uploads, authentication, and complex nested models.",
+        "Verify middleware logging and exception handling."
+      ],
+      "expectedOutput": "Swagger UI shows advanced routes and handles complex interactions."
+    }
+  }
+}
