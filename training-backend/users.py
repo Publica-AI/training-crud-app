@@ -1,15 +1,18 @@
 from database import db
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel, Field
 from sqlalchemy import text
 import os
 from dotenv import load_dotenv
 import bcrypt
 import uvicorn
+from middleware import create_token, verify_token
 
 load_dotenv()
 
 app = FastAPI(title="Simple App", version="1.0.0")
+
+token_time = int(os.getenv("token_time"))
 
 class Simple(BaseModel):
     name: str = Field(..., example="Sam Larry")
@@ -25,12 +28,9 @@ def signUp(input: Simple):
             SELECT * FROM users
             WHERE email = :email
                              """)
-        
-        # Task 3
         existing = db.execute(duplicate_query, {"email": input.email})
         if existing:
             print("Email already exists")
-            # raise HTTPException(status_code=400, detail="Email already exists")
 
         query = text("""
             INSERT INTO users (name, email, password, userType)
@@ -51,7 +51,7 @@ def signUp(input: Simple):
 
 class LoginRequest(BaseModel):
     email: str = Field(..., example="sam@email.com")
-    password: str = Field(..., example="sam123")  
+    password: str = Field(..., example="sam123")
 
 
 @app.post("/login")
@@ -70,14 +70,51 @@ def login(input: LoginRequest):
        if not verified_password:
             raise HTTPException(status_code=404, detail = "invalid email or password")
        
-       return {
-           "message": "Login Successful"
-       }
+       encoded_token = create_token(details={
+           "email": result.email,
+           "userType": result.userType
+       }, expiry=token_time)
 
+       return {
+           "message": "Login Successful",
+           "token": encoded_token
+
+       }
     except Exception as e:
         raise HTTPException(status_code=500, detail = str(e))
 
+
+class courseRequest(BaseModel):
+    title: str = Field(..., example="Backend Course")
+    level: str = Field(..., example="Beginner")
+
+@app.post("/courses")
+def addcourses(input: courseRequest, user_data = Depends(verify_token)):
+    try:
+        print(user_data)
+
+        if user_data['userType'] != 'admin':
+            raise HTTPException(status_code=401, detail="You are not authorized to add a course")
+
+        query = text("""
+             INSERT INTO courses (title, level)
+             VALUES (:title, :level)
+""")
+        
+        db.execute(query, {"title": input.title, "level": input.level})
+        db.commit()
+
+        return {
+            "message": "Course added successfully",
+            "data": {
+                "title": input.title,
+                "level": input.level
+            }
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 if __name__=="__main__":
-    uvicorn.run(app,host=os.getenv("host"), port=int(os.getenv("port")))
+    uvicorn.run(app, host=os.getenv("host"), port=int(os.getenv("port")))
 
 
